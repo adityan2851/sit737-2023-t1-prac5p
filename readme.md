@@ -12,16 +12,14 @@ npm install -s express
 touch Dockerfile
 ```
 
-## 3. Include Health check line in you Dockerfile
+## 3. Build Image
 ```
-HEALTHCHECK CMD curl --fail http://localhost:3000 || exit 1 
-```
-
-## 4. Build Image
-```
-docker build -t <imageName>
+docker build -t <imageName> .
 ```
 
-## 5. Run Image with restart argument
+## 4. Create docker-compose.yml
+Enter the required informations
+
+## 5. Run docker-compose
 ```
-docker run -d -p 3000:3000 --restart=on-failure <imageName>
+docker-compose up -t
